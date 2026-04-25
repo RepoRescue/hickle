@@ -1,0 +1,35 @@
+[setup] CWD = /tmp/hickle-clean
+[setup] hickle      from /home/zhihao/hdd/RepoRescue_Clean/repos/rescue_sonnet/hickle/hickle/__init__.py
+[setup] hickle ver  5.0.3
+[setup] h5py ver    3.16.0
+[setup] numpy ver   2.4.3
+[dump] wrote /tmp/tmpqsqcc2ny/checkpoint.h5 (91148 bytes)
+[h5py] file contains 29 datasets
+[load] restored top-level type dict
+[assert] deep equality OK
+[modules] hickle.hickle / loaders.load_numpy / loaders.load_builtins / helpers / lookup all engaged
+[3.13-surface] numpy 2.x asarray path traversed (load_numpy)
+[3.13-surface] legacy_v3.hickle uses importlib.metadata
+USABLE
+[ckpt] latest.h5 size = 23374 B; losses_a = [13.535576684949675, 13.50793703897206, 13.480950993264429, 13.45463255009819, 13.428901761281349]
+[resume] losses_b = [13.403734417936064, 13.377426142461067, 13.351456795755215, 13.325832286627659, 13.300550917269465]
+[final] loss = 13.300551
+SCENARIO_OK
+hickle 5.0.3, numpy 2.4.3
+[OK]   very_long_unicode_string
+[OK]   zero_dim_ndarray
+[OK]   empty_dict_and_list
+[FAIL] circular_reference_handled: ValueError: ("Provided argument 'file_obj' does not appear to be a valid hickle file! (maximum recursion depth exceeded)", RecursionError('maximum recursion depth exceeded'))
+[OK]   non_ascii_path
+[OK]   repeated_dump_state_leak
+[OK]   numpy2_float_scalar_subclass
+
+=== bug-hunt summary ===
+  OK     very_long_unicode_string             
+  OK     zero_dim_ndarray                     
+  OK     empty_dict_and_list                  
+  FAIL   circular_reference_handled           ValueError: ("Provided argument 'file_obj' does not appear to be a valid hickle file! (maximum recursion depth exceeded)", RecursionError('maximum recursion depth exceeded'))
+  OK     non_ascii_path                       
+  OK     repeated_dump_state_leak             
+  OK     numpy2_float_scalar_subclass         
+  failures: 1/7
